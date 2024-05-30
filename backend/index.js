@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from 'dotenv'
 const app = express();
+import mongoose from "mongoose";
 
 dotenv.config()
 
