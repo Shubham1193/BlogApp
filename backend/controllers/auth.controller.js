@@ -27,6 +27,7 @@ export const signup = async (req, res , next) => {
   try {
     const user = await newUser.save();
     const {password : pass , ...rest} = user._doc
+    console.log(rest)
     res.json(rest);
   } catch (err) {
     next(err)
