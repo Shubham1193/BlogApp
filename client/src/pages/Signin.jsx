@@ -18,6 +18,7 @@ const Signin = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
@@ -26,7 +27,7 @@ const Signin = () => {
     try {
       // setLoading(true);
       // setErrorMessage(null);
-      dispatch(signInStart)
+      dispatch(signInStart())
       console.log(formData)
       // const res = await axios.post("http://localhost:3000/api/auth/signup" , formData)
       const res = await fetch('http://localhost:3000/api/auth/signin', {
@@ -35,6 +36,8 @@ const Signin = () => {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
+      const token = data.token;
+      localStorage.setItem('access_token', token);
       if (data.success === false) {
         // return setErrorMessage(data.message);
         dispatch(signInFailure(data.message))

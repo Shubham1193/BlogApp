@@ -5,13 +5,12 @@ import mongoose from "mongoose";
 import userRoutes from "./routes/user.route.js"
 import authRoutes from "./routes/auth.route.js"
 import cors from 'cors'
-import cookieParser from "cookie-parser";
-import { verifyToken } from '../utils/verifyUser.js'
+import cookieParser from 'cookie-parser';
 
 
 
-app.use(cors())
-app.use(cookieParser())
+app.use(cors());
+app.use(cookieParser());
 
 dotenv.config()
 app.use(express.json())

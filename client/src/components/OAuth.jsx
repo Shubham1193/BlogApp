@@ -26,6 +26,8 @@ export default function OAuth() {
         }),
       });
       const data = await res.json();
+      const token = data.token;
+      localStorage.setItem('access_token', token);
       if (res.ok) {
         dispatch(signInSuccess(data));
         navigate("/");
