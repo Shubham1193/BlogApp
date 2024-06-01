@@ -32,6 +32,7 @@ export default function OAuth() {
         dispatch(signInSuccess(data));
         navigate("/");
       }
+      // console.log(resultsFromGoogle.user.displayName)
     } catch (error) {
       console.log(error);
     }

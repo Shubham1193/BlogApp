@@ -79,6 +79,7 @@ const Signin = () => {
                 placeholder='name@company.com'
                 id='email'
                 onChange={handleChange}
+               
               />
             </div>
             <div>
@@ -87,6 +88,7 @@ const Signin = () => {
                 type='password'
                 placeholder='**********'
                 id='password'
+
                 onChange={handleChange}
               />
             </div>
